@@ -23,6 +23,7 @@ try:
     obj_nse.convert_zip_files_to_csv(zip_files)
 
     csv_files=obj_nse.read_csv_files_from_folder()
+    print(csv_files)
     obj_nse.keep_particular_column(csv_files)
     csv_files=obj_nse.read_csv_files_from_folder()
     symbol=obj_nse.getting_all_symbols()

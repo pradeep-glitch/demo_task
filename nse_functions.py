@@ -13,9 +13,13 @@ class nse:
     def read_zip_files_from_folder(self):
         
         zip_files=glob.glob(zip_folder)
+        print(zip_files)
         return zip_files
 
     def read_csv_files_from_folder(self):
+
+        #csv_folder=r"C:/Users/shree.shree-PC/Desktop/normal_test/*csv"
+        #print(csv_folder)
         csv_files=glob.glob(csv_folder)
         print(csv_files)
         return csv_files
@@ -38,14 +42,15 @@ class nse:
                 #print(symbol)        
             return symbol
     def convert_zip_files_to_csv(self,z_file):
-    
+        print(z_file)
         try:
             for i in z_file:
+                 print(i)
                  file_name = i
                  with ZipFile(file_name, 'r') as zip: 
         
                     print(zip.extractall())
-            
+                    print("hi")
 
         except Exception as e:
             print(str(e))
@@ -94,7 +99,7 @@ class nse:
 #         11  30-Nov-2020 Monday  Gurunanak Jayanti
 #         12  25-Dec-2020 Friday  Christmas
 #                 
-        holidays_list=['21FEB2020','10MAR2020','02APR2020',] 
+        holidays_list=['21FEB2020','10MAR2020','02APR2020','06APR2020','10APR2020','14APR2020','01MAY2020','25MAY2020','02OCT2020','16NOV2020','30NOV2020','25DEC2020']
         day_name= ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday']
      
         for i in range(0,30):
@@ -123,7 +128,7 @@ class nse:
                      print(url)
                      r = requests.get(url, allow_redirects=True)
          
-                     with open('cm'+str(date1)+'.zip', 'wb') as file:
+                     with open('C:/Users/shree.shree-PC/Desktop/normal_test/cm'+str(date1)+'.zip', 'wb') as file:
             
                         file.write(r.content)
                         file.close()
